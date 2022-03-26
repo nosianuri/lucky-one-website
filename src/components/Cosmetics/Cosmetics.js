@@ -1,26 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import './Cosmetics.css';
+import Cosmetic from '../Cosmetic/Cosmetic';
 
 const Cosmetics = () => {
-    const cosmetics = [
-        {id: 1, name: 'Olay', image:'', price: 950},
-        {id: 2, name: 'Estee Lauder', image:'', price: 830},
-        {id: 3, name: 'Nivea', image:'', price: 650},
-        {id: 4, name: 'Oreal Paris', image:'', price: 750},
-        {id: 5, name: 'Neutrogena', image:'', price: 420},
-        {id: 6, name: 'Simple', image:'', price: 380},
-        {id: 7, name: 'Cetaphil', image:'', price: 1000},
-        {id: 8, name: 'Avene', image:'', price: 1200},
-        {id: 9, name: 'Cerave', image:'', price: 600},
-        {id: 10, name: 'Clinique', image:'', price: 580},
-        {id: 11, name: 'LAshield', image:'', price: 300},
-        {id: 12, name: 'Lancome', image:'', price: 500}
-]
+    const [cosmetics, setCosmetics] = useState([]);
+    const [cart, setcart] = useState([]);
+    
+    useEffect( () =>{
+        fetch('data.json')
+        .then(res=> res.json())
+        .then(data => setCosmetics(data))
+    }, []);
+
+    const handleAddToCart = (cosmetic) =>{
+        console.log(cosmetic);
+        // cart.push(cosmetic);
+        const newCart = [...cart, cosmetic];
+        setcart(newCart);
+    }
+
     return (
-        <div>
-            <h1>Welcome to my cos metics store</h1>
+        <div className='cosmetics-container'>
+            <div className='products-container'>
                 {
-                    cosmetics.map(cosmetic => console.log(cosmetic))
+                    cosmetics.map(cosmetic=><Cosmetic 
+                        key={cosmetic.id}
+                        cosmetic={cosmetic}
+                        handleAddToCart={handleAddToCart}
+                        ></Cosmetic>)
                 }
+            </div>
+            <div className='cart-container'>
+                <h4>Order Summary</h4>
+                <p>Selected Items: {cart.length}</p>
+            </div>    
         </div>
     );
 };

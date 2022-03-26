@@ -4,7 +4,7 @@ import Cosmetics from './components/Cosmetics/Cosmetics';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Cosmetics></Cosmetics>
     </div>
   );
