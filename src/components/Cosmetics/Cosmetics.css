@@ -20,15 +20,10 @@
 .cart-container{
     background-color: rgba(255, 153, 0, 0.3);
 }
-.cart-container .for-btn{
-    color: green;
-    padding: 10px;
-    border-radius: 8px;
-}
-.cart-container .again-btn{
-    color: blueviolet;
-    padding: 10px;
-    border-radius: 8px;
+.cart{
+    position: sticky;
+    top: 0;
+    padding: 30px 20px;
 }
 @media screen and (max-width:768px) {
     .products-container{
