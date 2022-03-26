@@ -17,6 +17,19 @@
     gap: 45px;
     margin: 100px 50px;
 }
+.cart-container{
+    background-color: rgba(255, 153, 0, 0.3);
+}
+.cart-container .for-btn{
+    color: green;
+    padding: 10px;
+    border-radius: 8px;
+}
+.cart-container .again-btn{
+    color: blueviolet;
+    padding: 10px;
+    border-radius: 8px;
+}
 @media screen and (max-width:768px) {
     .products-container{
         grid-template-columns: repeat(1, 1fr);
