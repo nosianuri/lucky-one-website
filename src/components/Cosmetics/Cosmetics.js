@@ -1,18 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './Cosmetics.css';
 import Cosmetic from '../Cosmetic/Cosmetic';
-import Cart from '../Cart/Cart';
 
 
-
-
-
-  
 
 const Cosmetics = () => {
     const [cosmetics, setCosmetics] = useState([]);
     const [cart, setCart] = useState([]);
-    // const [modalIsOpen, setIsOpen] = useState(false);
+    
     
     
 
@@ -23,8 +18,6 @@ const Cosmetics = () => {
     }, []);
 
     const handleAddToCart = (cosmetic) =>{
-        // console.log(cosmetic);
-        // cart.push(cosmetic);
         const newCart = [...cart, cosmetic];
         setCart(newCart);
     }
@@ -47,8 +40,20 @@ const Cosmetics = () => {
                 }
             </div>
             <div className='cart-container'>
+            <h4>Order Summary</h4>
+           
+                {
+                    cart.map((cart) => (
+                    
+                <p key={cart.id}> {cart.name}</p>
+                       
+                    ))
+                    
+                }
                 
-            <Cart cart={cart}></Cart>
+                <button onClick={(cart[Math.floor(Math.random()*cart.length)])}>Choose 1 For Me</button>
+                <button closeHandleAddToCart>Choose Again</button>
+            
 
             </div> 
              

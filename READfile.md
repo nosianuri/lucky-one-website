@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Deploy Live Website Link
+https://meek-paletas-8401ca.netlify.app/
+
 ## Available Scripts
 
 In the project directory, you can run:
