@@ -20,7 +20,12 @@ const Cosmetics = () => {
     }
 
     return (
+        <div className='store'>
+            <div className='store-name'>
+            <h1>Online Beauty Store</h1>
+            </div>
         <div className='cosmetics-container'>
+            
             <div className='products-container'>
                 {
                     cosmetics.map(cosmetic=><Cosmetic 
@@ -31,10 +36,13 @@ const Cosmetics = () => {
                 }
             </div>
             <div className='cart-container'>
+                
                 <h4>Order Summary</h4>
                 <p>Selected Items: {cart.length}</p>
             </div>    
         </div>
+        </div>
+        
     );
 };
 
